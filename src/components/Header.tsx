@@ -70,26 +70,26 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 text-teal-400 font-medium">
               <Phone className="w-3.5 h-3.5" />
-              Hotline: <strong className="text-white">01700-000000</strong> / <strong className="text-white">09613-888999</strong>
+              হটলাইন: <strong className="text-white">01700-000000</strong> / <strong className="text-white">09613-888999</strong>
             </span>
             <span className="text-slate-400">|</span>
-            <span className="text-slate-300">Fast delivery all across Bangladesh (24h in Dhaka)</span>
+            <span className="text-slate-300">সারা বাংলাদেশে দ্রুত ডেলিভারি (ঢাকায় ২৪ ঘণ্টায়)</span>
           </div>
           <div className="flex items-center gap-4 font-medium">
             <span className="text-amber-300 flex items-center gap-1">
-              <Sparkles className="w-3 h-3" /> Free shipping on orders above ৳2,500
+              <Sparkles className="w-3 h-3" /> ৳২,৫০০ বা তদূর্ধ্ব অর্ডারে ফ্রি ডেলিভারি
             </span>
             <button
               onClick={() => onNavigate('contact')}
-              className="hover:text-white transition-colors"
+              className="hover:text-white transition-colors cursor-pointer"
             >
-              Store Location
+              স্টোর লোকেশন
             </button>
             <button
               onClick={() => onNavigate('about')}
-              className="hover:text-white transition-colors"
+              className="hover:text-white transition-colors cursor-pointer"
             >
-              Why Astera
+              কেন Astera
             </button>
           </div>
         </div>
@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({
             <form onSubmit={handleSearchSubmit} className="relative">
               <input
                 type="text"
-                placeholder="Search T-Shirts, Jeans, Tops, Kurtis... (Try 'Product 1')"
+                placeholder="টি-শার্ট, জিন্স, টপস, কুর্তি খুঁজুন... (যেমন 'Product 1')"
                 value={searchQuery}
                 onChange={(e) => {
                   onSearchChange(e.target.value);
@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
                 type="submit"
                 className="absolute right-1.5 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold rounded-full transition-colors shadow-xs"
               >
-                Search
+                খুঁজুন
               </button>
             </form>
 
@@ -139,8 +139,8 @@ export const Header: React.FC<HeaderProps> = ({
             {searchFocused && searchQuery.trim().length > 1 && (
               <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                 <div className="p-2 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center text-xs text-slate-500 px-3">
-                  <span>Search results for "{searchQuery}"</span>
-                  <span>{searchResults.length} matches</span>
+                  <span>অনুসন্ধানের ফলাফল: "{searchQuery}"</span>
+                  <span>{searchResults.length} টি পাওয়া গেছে</span>
                 </div>
                 {searchResults.length > 0 ? (
                   <div className="divide-y divide-slate-50 max-h-72 overflow-y-auto">
@@ -183,12 +183,12 @@ export const Header: React.FC<HeaderProps> = ({
                       }}
                       className="w-full py-2.5 text-center text-xs font-semibold text-teal-600 hover:text-teal-700 hover:bg-slate-50 transition-colors flex items-center justify-center gap-1"
                     >
-                      View all products in shop <ArrowRight className="w-3.5 h-3.5" />
+                      শপে সবগুলো প্রোডাক্ট দেখুন <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 ) : (
                   <div className="p-4 text-center text-sm text-slate-500">
-                    No products found matching "{searchQuery}".
+                    "{searchQuery}" এর সাথে মিল রয়েছে এমন কোনো প্রোডাক্ট পাওয়া যায়নি।
                   </div>
                 )}
               </div>
@@ -199,33 +199,33 @@ export const Header: React.FC<HeaderProps> = ({
           <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700">
             <button
               onClick={() => onNavigate('home')}
-              className={`transition-colors hover:text-teal-600 ${
+              className={`transition-colors hover:text-teal-600 cursor-pointer ${
                 currentView === 'home' ? 'text-teal-600 font-bold' : ''
               }`}
             >
-              Home
+              হোম
             </button>
             <button
               onClick={() => onNavigate('shop')}
-              className={`transition-colors hover:text-teal-600 ${
+              className={`transition-colors hover:text-teal-600 cursor-pointer ${
                 currentView === 'shop' ? 'text-teal-600 font-bold' : ''
               }`}
             >
-              Shop
+              শপ
             </button>
             <button
               onClick={() => onNavigate('combos')}
-              className={`transition-colors hover:text-teal-600 ${
+              className={`transition-colors hover:text-teal-600 cursor-pointer ${
                 currentView === 'combos' ? 'text-teal-600 font-bold' : ''
               }`}
             >
-              Combos
+              কম্বো
             </button>
             <button
               onClick={() => onNavigate('offers')}
-              className="relative transition-colors hover:text-teal-600 flex items-center"
+              className="relative transition-colors hover:text-teal-600 flex items-center cursor-pointer"
             >
-              <span>Offers</span>
+              <span>অফার</span>
               {/* Bright Red "NEW" Badge as required */}
               <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-extrabold uppercase bg-rose-600 text-white rounded-full tracking-wider animate-pulse">
                 NEW
@@ -233,11 +233,11 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <button
               onClick={() => onNavigate('blog')}
-              className={`transition-colors hover:text-teal-600 ${
+              className={`transition-colors hover:text-teal-600 cursor-pointer ${
                 currentView === 'blog' ? 'text-teal-600 font-bold' : ''
               }`}
             >
-              Blog
+              ব্লগ
             </button>
           </nav>
 
@@ -246,10 +246,10 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Sign In Button */}
             <button
               onClick={onOpenAuth}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-teal-700 hover:bg-slate-100 rounded-xl transition-colors"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-teal-700 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
             >
               <User className="w-4 h-4 text-slate-600" />
-              <span>Sign In</span>
+              <span>সাইন ইন</span>
             </button>
 
             {/* Cart Button */}
@@ -287,7 +287,7 @@ export const Header: React.FC<HeaderProps> = ({
           <form onSubmit={handleSearchSubmit} className="relative">
             <input
               type="text"
-              placeholder="Search Astera fashion products..."
+              placeholder="টি-শার্ট, জিন্স বা পোশাক খুঁজুন..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               className="w-full pl-9 pr-16 py-2 bg-slate-50 border border-slate-200 rounded-full text-xs text-slate-800 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500"
@@ -297,7 +297,7 @@ export const Header: React.FC<HeaderProps> = ({
               type="submit"
               className="absolute right-1 top-1/2 -translate-y-1/2 px-3 py-1 bg-teal-600 text-white text-[11px] font-semibold rounded-full"
             >
-              Go
+              খুঁজুন
             </button>
           </form>
         </div>
@@ -317,7 +317,7 @@ export const Header: React.FC<HeaderProps> = ({
                 : 'hover:text-slate-900 hover:bg-slate-200/60'
             }`}
           >
-            All Items
+            সবগুলো
           </button>
           {CATEGORIES.map((cat) => {
             const isActive = selectedCategory === cat.slug;
@@ -334,7 +334,7 @@ export const Header: React.FC<HeaderProps> = ({
                     : 'hover:text-slate-900 hover:bg-slate-200/60 text-slate-600'
                 }`}
               >
-                {cat.name}
+                {cat.nameBn || cat.name}
               </button>
             );
           })}
@@ -352,7 +352,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="text-left py-2 px-3 rounded-lg hover:bg-slate-50"
             >
-              Home
+              হোম
             </button>
             <button
               onClick={() => {
@@ -361,7 +361,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="text-left py-2 px-3 rounded-lg hover:bg-slate-50"
             >
-              Shop Catalog
+              শপ ক্যাটালগ
             </button>
             <button
               onClick={() => {
@@ -370,7 +370,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="text-left py-2 px-3 rounded-lg hover:bg-slate-50"
             >
-              Fashion Combos
+              ফ্যাশন কম্বো
             </button>
             <button
               onClick={() => {
@@ -379,7 +379,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="text-left py-2 px-3 rounded-lg hover:bg-slate-50 flex items-center justify-between"
             >
-              <span>Offers &amp; Coupons</span>
+              <span>অফার ও ভাউচার</span>
               <span className="px-2 py-0.5 text-[10px] font-bold bg-rose-600 text-white rounded-full">
                 NEW
               </span>
@@ -391,7 +391,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="text-left py-2 px-3 rounded-lg hover:bg-slate-50"
             >
-              Style Guides &amp; Blog
+              স্টাইল গাইড ও ব্লগ
             </button>
             <button
               onClick={() => {
@@ -400,7 +400,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="text-left py-2 px-3 rounded-lg hover:bg-slate-50"
             >
-              About Astera
+              Astera সম্পর্কে
             </button>
             <button
               onClick={() => {
@@ -409,7 +409,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="text-left py-2 px-3 rounded-lg hover:bg-slate-50"
             >
-              Contact &amp; Store Location
+              যোগাযোগ ও স্টোর লোকেশন
             </button>
 
             <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
@@ -420,7 +420,7 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 className="flex items-center gap-2 py-2 text-teal-700 font-bold"
               >
-                <User className="w-4 h-4" /> Sign In / Create Account
+                <User className="w-4 h-4" /> সাইন ইন / অ্যাকাউন্ট তৈরি করুন
               </button>
             </div>
           </div>

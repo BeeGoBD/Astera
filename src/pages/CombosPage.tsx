@@ -27,16 +27,15 @@ export const CombosPage: React.FC<CombosPageProps> = ({
       <div className="rounded-3xl bg-gradient-to-r from-teal-950 via-slate-900 to-indigo-950 p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-teal-800/40 mb-10">
         <div className="relative z-10 max-w-2xl">
           <span className="px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-xs font-black uppercase tracking-wider inline-flex items-center gap-1.5 border border-teal-400/30 mb-3">
-            <Layers className="w-3.5 h-3.5" /> Curated Wardrobe Bundles
+            <Layers className="w-3.5 h-3.5" /> নির্বাচিত ফ্যাশন কম্বো বান্ডিল
           </span>
           <h1
             className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Astera Fashion Combos
+            Astera ফ্যাশন কম্বো
           </h1>
           <p className="mt-2 text-sm text-slate-300">
-            Pre-styled matching outfits combined into single discounted packages. Save up to ৳1,800 on complete head-to-toe styling.
+            ম্যাচিং স্টাইলের পোশাকগুলো এক প্যাকেজে বিশেষ ছাড়ে কিনুন। কম্বো প্যাকেজে সর্বোচ্চ ৳১,৮০০ পর্যন্ত সাশ্রয় করুন।
           </p>
         </div>
       </div>
@@ -91,12 +90,12 @@ export const CombosPage: React.FC<CombosPageProps> = ({
                       {addedComboId === combo.id ? (
                         <>
                           <Check className="w-4 h-4" />
-                          <span>Combo Added to Bag!</span>
+                          <span>কম্বো ব্যাগে যোগ হয়েছে!</span>
                         </>
                       ) : (
                         <>
                           <ShoppingBag className="w-4 h-4" />
-                          <span>ADD COMBO TO CART</span>
+                          <span>কম্বো ব্যাগে যোগ করুন</span>
                         </>
                       )}
                     </button>

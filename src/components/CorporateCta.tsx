@@ -29,23 +29,22 @@ export const CorporateCta: React.FC = () => {
           <div className="relative z-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider text-teal-300 border border-white/15 mb-4">
               <Briefcase className="w-3.5 h-3.5 text-teal-400" />
-              B2B Partnerships &amp; Wholesale
+              B2B পার্টনারশিপ ও পাইকারি অর্ডার
             </div>
 
-            {/* Exact wording from brief */}
+            {/* Exact wording translated */}
             <h2
               className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Join 100+ Brands &amp; Boutiques That Trust Astera
+              ১০০+ ব্র্যান্ড ও বুটিকের নির্ভরযোগ্য পার্টনার Astera
             </h2>
 
             <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl font-normal">
-              Whether you are an established retail chain, an independent boutique, or sourcing corporate employee apparel, Astera supplies certified premium fabric, fast customization, and guaranteed delivery timelines across Bangladesh.
+              আপনি কোনো প্রতিষ্ঠিত রিটেইল চেইন, স্বাধীন বুটিক কিংবা প্রাতিষ্ঠানিক পোশাক সোর্সিং যা-ই চান না কেন, Astera নিশ্চিত করে সার্টিফাইড প্রিমিয়াম ফেব্রিক, দ্রুত কাস্টমাইজেশন এবং সারা বাংলাদেশে নির্ভরযোগ্য সময়মতো ডেলিভারি।
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              {/* Exact CTA text from brief */}
+              {/* Exact CTA text */}
               <button
                 type="button"
                 onClick={() => {
@@ -54,16 +53,16 @@ export const CorporateCta: React.FC = () => {
                 }}
                 className="px-6 py-3.5 bg-rose-500 hover:bg-rose-400 text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase rounded-xl transition-all shadow-lg shadow-rose-500/30 active:scale-95 flex items-center gap-2 cursor-pointer"
               >
-                <span>LET’S SCHEDULE A MEETING</span>
+                <span>মিটিং শিডিউল করুন</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <div className="flex items-center gap-4 text-xs text-slate-300">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-teal-400" /> Bulk Pricing Tier
+                  <CheckCircle2 className="w-4 h-4 text-teal-400" /> পাইকারি মূল্য সুবিধা
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Shield className="w-4 h-4 text-teal-400" /> Certified QA
+                  <Shield className="w-4 h-4 text-teal-400" /> সার্টিফাইড কিউএ
                 </span>
               </div>
             </div>

@@ -62,21 +62,21 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
       <nav className="flex items-center gap-1.5 text-xs text-slate-500 mb-6 overflow-x-auto no-scrollbar">
         <button
           onClick={onNavigateHome}
-          className="hover:text-slate-900 transition-colors shrink-0"
+          className="hover:text-slate-900 transition-colors shrink-0 cursor-pointer"
         >
-          Home
+          হোম
         </button>
         <ChevronRight className="w-3.5 h-3.5 shrink-0 text-slate-400" />
         <button
           onClick={() => onNavigateShop()}
-          className="hover:text-slate-900 transition-colors shrink-0"
+          className="hover:text-slate-900 transition-colors shrink-0 cursor-pointer"
         >
-          Shop
+          শপ
         </button>
         <ChevronRight className="w-3.5 h-3.5 shrink-0 text-slate-400" />
         <button
           onClick={() => onNavigateShop(product.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-'))}
-          className="hover:text-slate-900 transition-colors shrink-0 text-teal-700 font-semibold"
+          className="hover:text-slate-900 transition-colors shrink-0 text-teal-700 font-semibold cursor-pointer"
         >
           {product.category}
         </button>
@@ -101,7 +101,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             {product.discount > 0 && (
               <div className="absolute top-4 left-4 z-20">
                 <span className="px-3 py-1 text-xs font-black uppercase bg-rose-600 text-white rounded-lg shadow-sm">
-                  -{product.discount}% OFF
+                  -{product.discount}% ছাড়
                 </span>
               </div>
             )}
@@ -109,7 +109,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             {/* Share action */}
             <button
               onClick={() => navigator.clipboard?.writeText(window.location.href)}
-              className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-white/90 hover:bg-white text-slate-600 hover:text-slate-900 shadow-sm border border-slate-100 transition-colors"
+              className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-white/90 hover:bg-white text-slate-600 hover:text-slate-900 shadow-sm border border-slate-100 transition-colors cursor-pointer"
               title="Copy product link"
             >
               <Share2 className="w-4 h-4" />
@@ -146,7 +146,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
               <div className="flex items-center gap-1 bg-amber-50 px-2 py-0.5 rounded-md text-amber-700 text-xs font-bold">
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <span>{product.rating}</span>
-                <span className="text-slate-400 font-normal">({product.reviewsCount} reviews)</span>
+                <span className="text-slate-400 font-normal">({product.reviewsCount} রিভিউ)</span>
               </div>
             </div>
 
@@ -169,7 +169,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                     ৳{product.originalPrice.toLocaleString()}
                   </span>
                   <span className="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md">
-                    Save ৳{(product.originalPrice - product.price).toLocaleString()}
+                    সেভ ৳{(product.originalPrice - product.price).toLocaleString()}
                   </span>
                 </>
               )}
@@ -178,8 +178,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             {/* Stock status */}
             <div className="mt-3 flex items-center gap-2 text-xs">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-semibold text-emerald-700">In Stock Ready for Dispatch</span>
-              <span className="text-slate-400">· Fast Shipping across Bangladesh</span>
+              <span className="font-semibold text-emerald-700">স্টকে রয়েছে (তাত্ক্ষণিক ডেলিভারি)</span>
+              <span className="text-slate-400">· সারা বাংলাদেশে দ্রুত ডেলিভারি</span>
             </div>
 
             <p className="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -190,7 +190,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="mt-6 pt-5 border-t border-slate-100">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-bold text-slate-800">
-                  Select Color: <strong className="text-teal-700">{selectedColor}</strong>
+                  রং নির্বাচন করুন: <strong className="text-teal-700">{selectedColor}</strong>
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
@@ -219,15 +219,15 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="mt-5">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-bold text-slate-800">
-                  Select Size: <strong className="text-teal-700">{selectedSize}</strong>
+                  সাইজ নির্বাচন করুন: <strong className="text-teal-700">{selectedSize}</strong>
                 </span>
                 <button
                   type="button"
                   onClick={() => setShowSizeGuide(true)}
-                  className="text-xs font-semibold text-teal-700 hover:underline flex items-center gap-1"
+                  className="text-xs font-semibold text-teal-700 hover:underline flex items-center gap-1 cursor-pointer"
                 >
                   <Ruler className="w-3.5 h-3.5" />
-                  <span>Size Chart</span>
+                  <span>সাইজ চার্ট</span>
                 </button>
               </div>
               <div className="grid grid-cols-5 gap-2">
@@ -250,12 +250,12 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
             {/* Quantity Stepper */}
             <div className="mt-5 flex items-center gap-4">
-              <span className="text-xs font-bold text-slate-800">Quantity:</span>
+              <span className="text-xs font-bold text-slate-800">পরিমাণ:</span>
               <div className="flex items-center border border-slate-200 rounded-xl bg-white">
                 <button
                   type="button"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-3 py-1.5 hover:bg-slate-100 text-slate-600 transition-colors font-bold text-sm"
+                  className="px-3 py-1.5 hover:bg-slate-100 text-slate-600 transition-colors font-bold text-sm cursor-pointer"
                 >
                   -
                 </button>
@@ -265,7 +265,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                 <button
                   type="button"
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-3 py-1.5 hover:bg-slate-100 text-slate-600 transition-colors font-bold text-sm"
+                  className="px-3 py-1.5 hover:bg-slate-100 text-slate-600 transition-colors font-bold text-sm cursor-pointer"
                 >
                   +
                 </button>
@@ -282,12 +282,12 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                 {isAddedToast ? (
                   <>
                     <Check className="w-4 h-4 text-white" />
-                    <span>Added to Bag!</span>
+                    <span>ব্যাগে যোগ হয়েছে!</span>
                   </>
                 ) : (
                   <>
                     <ShoppingBag className="w-4 h-4" />
-                    <span>ADD TO CART</span>
+                    <span>ব্যাগে যোগ করুন</span>
                   </>
                 )}
               </button>
@@ -298,29 +298,35 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                 className="flex-1 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Zap className="w-4 h-4 text-amber-300" />
-                <span>BUY NOW (COD / ONLINE)</span>
+                <span>এখনই কিনুন (cash on delivery)</span>
               </button>
             </div>
           </div>
 
-          {/* Delivery & Assurance Card */}
+          {/* Delivery & Assurance Card (With exact required English phrases) */}
           <div className="mt-8 p-4 rounded-2xl bg-slate-50 border border-slate-150/70 space-y-2.5 text-xs text-slate-600">
             <div className="flex items-center gap-2.5">
               <Truck className="w-4 h-4 text-teal-600 shrink-0" />
               <span>
-                <strong>Dhaka Delivery:</strong> ৳60 (within 24 hours). <strong>Outside Dhaka:</strong> ৳120 (48-72 hours).
+                <strong>24 to 48 hours delivery:</strong> ঢাকায় ২৪ ঘণ্টা (৳৬০), ঢাকার বাইরে ৪৮ ঘণ্টার মধ্যে (৳১২০) ডেলিভারি।
               </span>
             </div>
             <div className="flex items-center gap-2.5">
               <RotateCcw className="w-4 h-4 text-teal-600 shrink-0" />
               <span>
-                <strong>7-Day Easy Exchange:</strong> Size mismatch or fabric preference replaced at doorstep.
+                <strong>7 days easy exchange:</strong> সাইজ পরিবর্তন বা পছন্দের ক্ষেত্রে ৭ দিনের মধ্যে সহজে এক্সচেঞ্জ সুবিধা।
               </span>
             </div>
             <div className="flex items-center gap-2.5">
               <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
               <span>
-                <strong>Authentic Quality Guaranteed:</strong> Pre-shrunk, combed yarn tested for high wash resistance.
+                <strong>100% cotton:</strong> প্রিমিয়াম কম্বড কটন, প্রি-ওয়াশড এবং টেকসই দীর্ঘস্থায়ী কালারফাস্ট কোয়ালিটি।
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
+              <span>
+                <strong>cash on delivery:</strong> সারাদেশে হোম ডেলিভারিতে পণ্য দেখে মূল্য পরিশোধ করার নিশ্চয়তা।
               </span>
             </div>
           </div>
@@ -332,52 +338,52 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
         <div className="flex items-center gap-4 border-b border-slate-200 pb-3 overflow-x-auto no-scrollbar">
           <button
             onClick={() => setActiveTab('details')}
-            className={`pb-2 text-sm font-bold transition-all relative ${
+            className={`pb-2 text-sm font-bold transition-all relative cursor-pointer ${
               activeTab === 'details'
                 ? 'text-teal-700'
                 : 'text-slate-500 hover:text-slate-900'
             }`}
           >
-            Product Features
+            প্রোডাক্ট বৈশিষ্ট্য
             {activeTab === 'details' && (
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-600" />
             )}
           </button>
           <button
             onClick={() => setActiveTab('specs')}
-            className={`pb-2 text-sm font-bold transition-all relative ${
+            className={`pb-2 text-sm font-bold transition-all relative cursor-pointer ${
               activeTab === 'specs'
                 ? 'text-teal-700'
                 : 'text-slate-500 hover:text-slate-900'
             }`}
           >
-            Fabric &amp; Care Specifications
+            ফেব্রিক ও যত্নবিধি
             {activeTab === 'specs' && (
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-600" />
             )}
           </button>
           <button
             onClick={() => setActiveTab('shipping')}
-            className={`pb-2 text-sm font-bold transition-all relative ${
+            className={`pb-2 text-sm font-bold transition-all relative cursor-pointer ${
               activeTab === 'shipping'
                 ? 'text-teal-700'
                 : 'text-slate-500 hover:text-slate-900'
             }`}
           >
-            Delivery &amp; COD Policy
+            ডেলিভারি ও ক্যাশ অন ডেলিভারি
             {activeTab === 'shipping' && (
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-600" />
             )}
           </button>
           <button
             onClick={() => setActiveTab('reviews')}
-            className={`pb-2 text-sm font-bold transition-all relative ${
+            className={`pb-2 text-sm font-bold transition-all relative cursor-pointer ${
               activeTab === 'reviews'
                 ? 'text-teal-700'
                 : 'text-slate-500 hover:text-slate-900'
             }`}
           >
-            Verified Reviews ({product.reviewsCount})
+            ভেরিফায়েড রিভিউ ({product.reviewsCount})
             {activeTab === 'reviews' && (
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-600" />
             )}
@@ -387,7 +393,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
         <div className="py-6 text-xs sm:text-sm text-slate-700 leading-relaxed max-w-4xl">
           {activeTab === 'details' && (
             <div>
-              <h4 className="font-bold text-slate-900 mb-3 text-base">Key Highlights of {product.name}</h4>
+              <h4 className="font-bold text-slate-900 mb-3 text-base">{product.name} এর বিশেষ সুবিধাসমূহ</h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {product.features.map((feat, idx) => (
                   <li key={idx} className="flex items-center gap-2">
@@ -403,20 +409,20 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="space-y-3">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                  <span className="text-[11px] text-slate-400 block">Material Composition</span>
-                  <span className="font-bold text-slate-800">100% Combed Compact Cotton</span>
+                  <span className="text-[11px] text-slate-400 block">উপাদান</span>
+                  <span className="font-bold text-slate-800">100% cotton (কম্বড কটন)</span>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                  <span className="text-[11px] text-slate-400 block">Weave / Weight</span>
-                  <span className="font-bold text-slate-800">Heavy Knit 220-240 GSM</span>
+                  <span className="text-[11px] text-slate-400 block">ফেব্রিক ঘনত্ব</span>
+                  <span className="font-bold text-slate-800">হেভি নিট ২২০-২৪০ জিএসএম</span>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                  <span className="text-[11px] text-slate-400 block">Pre-Shrinkage</span>
-                  <span className="font-bold text-slate-800">Pre-washed 0% Dimensional Loss</span>
+                  <span className="text-[11px] text-slate-400 block">প্রি-ওয়াশড</span>
+                  <span className="font-bold text-slate-800">প্রি-শ্রাঙ্ক, সাইজ অপরিবর্তিত থাকে</span>
                 </div>
               </div>
               <p className="text-slate-500 pt-2">
-                Machine wash cold inside-out with like colors. Avoid bleach and direct sunlight drying to preserve reactive color radiance.
+                মৃদু ডিটারজেন্ট এবং স্বাভাবিক তাপমাত্রার পানিতে ধোয়ার পরামর্শ দেওয়া হচ্ছে। সরাসরি কড়া রোদে বেশিক্ষণ না শুকিয়ে ছায়ায় শুকালে পোশাকের উজ্জ্বলতা দীর্ঘস্থায়ী হয়।
               </p>
             </div>
           )}
@@ -424,16 +430,16 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
           {activeTab === 'shipping' && (
             <div className="space-y-3">
               <p>
-                Astera delivers through trusted courier partners (Steadfast, Pathao, Paperfly) across all 64 districts in Bangladesh.
+                Astera বিশ্বস্ত কুরিয়ার পার্টনারদের মাধ্যমে সমগ্র বাংলাদেশে নিরাপদে এবং দ্রুত হোম ডেলিভারি পৌঁছে দেয়।
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div className="p-3.5 rounded-xl border border-slate-200">
-                  <h5 className="font-bold text-slate-900">Inside Dhaka Metropolitan</h5>
-                  <p className="text-slate-500 mt-1">৳60 shipping fee. Next day delivery (24 hours). Cash on delivery available.</p>
+                  <h5 className="font-bold text-slate-900">ঢাকা মহানগরের ভেতরে</h5>
+                  <p className="text-slate-500 mt-1">ডেলিভারি চার্জ মাত্র ৳৬০। ২৪ ঘণ্টার মধ্যে হোম ডেলিভারি ও cash on delivery সুবিধা।</p>
                 </div>
                 <div className="p-3.5 rounded-xl border border-slate-200">
-                  <h5 className="font-bold text-slate-900">Outside Dhaka &amp; Suburbs</h5>
-                  <p className="text-slate-500 mt-1">৳120 shipping fee. Delivery within 48 to 72 hours. Cash on delivery available.</p>
+                  <h5 className="font-bold text-slate-900">ঢাকার বাইরে ও অন্যান্য জেলা</h5>
+                  <p className="text-slate-500 mt-1">ডেলিভারি চার্জ মাত্র ৳১২০। ৪৮ থেকে ৭২ ঘণ্টার মধ্যে ডেলিভারি ও cash on delivery সুবিধা।</p>
                 </div>
               </div>
             </div>
@@ -467,16 +473,16 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
         <div className="mt-14 pt-8 border-t border-slate-200">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <span className="text-xs font-black uppercase text-teal-600">Complete the Look</span>
+              <span className="text-xs font-black uppercase text-teal-600">কমপ্লিট দ্য লুক</span>
               <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">
-                You May Also Like
+                আপনার পছন্দের আরও কালেকশন
               </h3>
             </div>
             <button
               onClick={() => onNavigateShop(product.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-'))}
-              className="text-xs font-bold text-teal-700 hover:underline"
+              className="text-xs font-bold text-teal-700 hover:underline cursor-pointer"
             >
-              View More in {product.category}
+              {product.category} এর আরও দেখুন
             </button>
           </div>
 
@@ -503,13 +509,13 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-2">
                 <Ruler className="w-5 h-5 text-teal-600" />
-                <h4 className="text-base font-bold text-slate-900">Astera Sizing Chart (Inches)</h4>
+                <h4 className="text-base font-bold text-slate-900">Astera সাইজ চার্ট (ইঞ্চি)</h4>
               </div>
               <button
                 onClick={() => setShowSizeGuide(false)}
-                className="text-slate-400 hover:text-slate-700 text-sm font-bold"
+                className="text-slate-400 hover:text-slate-700 text-sm font-bold cursor-pointer"
               >
-                Close
+                বন্ধ করুন
               </button>
             </div>
 
@@ -517,49 +523,49 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
               <table className="w-full text-xs text-left text-slate-700">
                 <thead className="bg-slate-50 text-slate-900 font-bold uppercase text-[10px]">
                   <tr>
-                    <th className="p-2.5">Size</th>
-                    <th className="p-2.5">Chest</th>
-                    <th className="p-2.5">Length</th>
-                    <th className="p-2.5">Shoulder</th>
+                    <th className="p-2.5">সাইজ</th>
+                    <th className="p-2.5">বুক (Chest)</th>
+                    <th className="p-2.5">লম্বা (Length)</th>
+                    <th className="p-2.5">কাঁধ (Shoulder)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   <tr>
                     <td className="p-2.5 font-bold">S</td>
-                    <td className="p-2.5">38"</td>
-                    <td className="p-2.5">27"</td>
-                    <td className="p-2.5">17.5"</td>
+                    <td className="p-2.5">৩৮"</td>
+                    <td className="p-2.5">২৭"</td>
+                    <td className="p-2.5">১৭.৫"</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-bold">M</td>
-                    <td className="p-2.5">40"</td>
-                    <td className="p-2.5">28"</td>
-                    <td className="p-2.5">18.5"</td>
+                    <td className="p-2.5">৪০"</td>
+                    <td className="p-2.5">২৮"</td>
+                    <td className="p-2.5">১৮.৫"</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-bold">L</td>
-                    <td className="p-2.5">42"</td>
-                    <td className="p-2.5">29"</td>
-                    <td className="p-2.5">19.5"</td>
+                    <td className="p-2.5">৪২"</td>
+                    <td className="p-2.5">২৯"</td>
+                    <td className="p-2.5">১৯.৫"</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-bold">XL</td>
-                    <td className="p-2.5">44"</td>
-                    <td className="p-2.5">30"</td>
-                    <td className="p-2.5">20.5"</td>
+                    <td className="p-2.5">৪৪"</td>
+                    <td className="p-2.5">৩০"</td>
+                    <td className="p-2.5">২০.৫"</td>
                   </tr>
                   <tr>
                     <td className="p-2.5 font-bold">XXL</td>
-                    <td className="p-2.5">46"</td>
-                    <td className="p-2.5">31"</td>
-                    <td className="p-2.5">21.5"</td>
+                    <td className="p-2.5">৪৬"</td>
+                    <td className="p-2.5">৩১"</td>
+                    <td className="p-2.5">২১.৫"</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <p className="mt-4 text-[11px] text-slate-500">
-              *All measurements are in inches. If you prefer a loose relaxed streetwear drape, size up by one level.
+              *সকল পরিমাপ ইঞ্চিতে দেওয়া হয়েছে। আপনি যদি কিছুটা ঢিলেঢালা রিল্যাক্সড ফিট পছন্দ করেন, তবে এক সাইজ বড় নির্বাচন করার পরামর্শ দেওয়া হচ্ছে।
             </p>
           </div>
         </div>

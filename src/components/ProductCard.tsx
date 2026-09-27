@@ -79,7 +79,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           {/* Available Sizes Quick Tag */}
           <div className="flex items-center gap-1 mt-1.5 text-[11px] text-slate-400">
-            <span>Sizes:</span>
+            <span>সাইজ:</span>
             <span className="text-slate-600 font-medium">
               {product.sizes.slice(0, 3).join(', ')}
               {product.sizes.length > 3 ? '...' : ''}
@@ -115,12 +115,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {isAdded ? (
               <>
                 <Check className="w-3.5 h-3.5" />
-                <span>Added</span>
+                <span>যুক্ত হয়েছে</span>
               </>
             ) : (
               <>
                 <ShoppingBag className="w-3.5 h-3.5" />
-                <span>Add to Cart</span>
+                <span>অর্ডার করুন</span>
               </>
             )}
           </button>

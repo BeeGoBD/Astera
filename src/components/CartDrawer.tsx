@@ -45,7 +45,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       setCouponError('');
       setCouponInput('');
     } else {
-      setCouponError('Invalid coupon code. Try ASTERA10 or FREESHIP');
+      setCouponError('অকার্যকর কুপন কোড। চেষ্টা করুন ASTERA10 অথবা FREESHIP');
     }
   };
 
@@ -64,7 +64,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-teal-600" />
               <h3 className="font-extrabold text-slate-900 text-base">
-                Your Shopping Bag ({items.reduce((acc, i) => acc + i.quantity, 0)})
+                আপনার শপিং ব্যাগ ({items.reduce((acc, i) => acc + i.quantity, 0)})
               </h3>
             </div>
             <button
@@ -80,12 +80,12 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="px-5 py-3 bg-teal-50/70 border-b border-teal-100/60 text-xs">
             {remainingForFreeShipping > 0 ? (
               <p className="text-teal-900 font-medium">
-                Add <strong className="text-teal-700 font-extrabold">৳{remainingForFreeShipping.toLocaleString()}</strong> more to get <strong className="text-rose-600">FREE delivery</strong> nationwide!
+                আর মাত্র <strong className="text-teal-700 font-extrabold">৳{remainingForFreeShipping.toLocaleString()}</strong> কেনাকাটা করলেই উপভোগ করুন <strong className="text-rose-600">ফ্রি ডেলিভারি</strong>!
               </p>
             ) : (
               <p className="text-emerald-800 font-bold flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-emerald-600" />
-                Congratulations! You qualified for FREE shipping!
+                অভিনন্দন! আপনি ফ্রি ডেলিভারি অফারটি পেয়েছেন!
               </p>
             )}
             <div className="w-full h-2 bg-teal-100 rounded-full mt-2 overflow-hidden">
@@ -103,15 +103,15 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
                   <ShoppingBag className="w-8 h-8" />
                 </div>
-                <h4 className="font-bold text-slate-800 text-base">Your bag is empty</h4>
+                <h4 className="font-bold text-slate-800 text-base">আপনার ব্যাগ বর্তমানে খালি</h4>
                 <p className="text-xs text-slate-400 mt-1 max-w-xs">
-                  Explore Astera’s latest fashion drops and add your favorite items to cart.
+                  Astera-র লেটেস্ট ফ্যাশন কালেকশন ঘুরে দেখুন এবং পছন্দের পোশাক ব্যাগে যোগ করুন।
                 </p>
                 <button
                   onClick={onClose}
                   className="mt-5 px-6 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-xs transition-colors"
                 >
-                  Start Shopping
+                  কেনাকাটা শুরু করুন
                 </button>
               </div>
             ) : (
@@ -146,7 +146,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       {/* Variant tags */}
                       <div className="flex items-center gap-2 mt-1 text-[11px] text-slate-500">
                         <span className="px-1.5 py-0.5 bg-slate-100 rounded text-slate-700 font-semibold">
-                          Size: {item.selectedSize}
+                          সাইজ: {item.selectedSize}
                         </span>
                         <span className="px-1.5 py-0.5 bg-slate-100 rounded text-slate-700">
                           {item.selectedColor}
@@ -196,16 +196,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <form onSubmit={handleApplyCoupon} className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="Coupon code (e.g. ASTERA10)"
+                  placeholder="কুপন কোড (যেমন ASTERA10)"
                   value={couponInput}
                   onChange={(e) => setCouponInput(e.target.value)}
                   className="flex-1 px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs uppercase text-slate-800 placeholder:normal-case focus:outline-none focus:ring-1 focus:ring-teal-500"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition-colors"
+                  className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition-colors cursor-pointer"
                 >
-                  Apply
+                  প্রয়োগ
                 </button>
               </form>
 
@@ -215,30 +215,30 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               {appliedCoupon && (
                 <p className="text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
                   <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-                  Coupon "{appliedCoupon}" applied successfully!
+                  কুপন "{appliedCoupon}" সফলভাবে প্রয়োগ হয়েছে!
                 </p>
               )}
 
               {/* Price Calculations */}
               <div className="space-y-1.5 text-xs text-slate-600 pt-2 border-t border-slate-200/60">
                 <div className="flex justify-between">
-                  <span>Subtotal</span>
+                  <span>সাবটোটাল</span>
                   <span className="font-bold text-slate-900 tabular-nums">৳{subtotal.toLocaleString()}</span>
                 </div>
                 {discountAmount > 0 && (
                   <div className="flex justify-between text-rose-600 font-medium">
-                    <span>Discount</span>
+                    <span>ডিসকাউন্ট</span>
                     <span className="font-bold tabular-nums">-৳{discountAmount.toLocaleString()}</span>
                   </div>
                 )}
                 <div className="flex justify-between">
-                  <span>Estimated Delivery</span>
+                  <span>ডেলিভারি চার্জ</span>
                   <span className="text-teal-700 font-medium">
-                    {remainingForFreeShipping === 0 ? 'FREE' : 'Calculated at checkout'}
+                    {remainingForFreeShipping === 0 ? 'ফ্রি' : 'চেকআউটে নির্ধারিত হবে'}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm font-black text-slate-900 pt-2 border-t border-slate-200">
-                  <span>Total Amount</span>
+                  <span>সর্বমোট</span>
                   <span className="text-base text-teal-700 tabular-nums">
                     ৳{finalTotal.toLocaleString()}
                   </span>
@@ -254,13 +254,13 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 }}
                 className="w-full py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-extrabold text-sm rounded-xl transition-all shadow-md shadow-teal-600/20 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>PROCEED TO CHECKOUT</span>
+                <span>অর্ডারে এগিয়ে যান (চেকআউট)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-slate-400">
                 <ShieldCheck className="w-3.5 h-3.5 text-teal-600" />
-                <span>Cash on Delivery / bKash / Cards Guaranteed</span>
+                <span>cash on delivery / bKash / কার্ড পেমেন্ট সুবিধা</span>
               </div>
             </div>
           )}

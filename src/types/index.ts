@@ -28,6 +28,7 @@ export interface CartItem {
 export interface Category {
   id: string;
   name: string;
+  nameBn?: string;
   slug: string;
   itemCount: number;
   description: string;

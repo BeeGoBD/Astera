@@ -27,16 +27,15 @@ export const ReviewsSection: React.FC = () => {
         <div>
           <span className="text-xs font-black uppercase tracking-wider text-rose-600 flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-rose-500" />
-            Verified Customer Experiences
+            ভেরিফায়েড ক্রেতাদের অভিজ্ঞতা
           </span>
           <h2
             className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1 uppercase"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             CUSTOMER REVIEWS
           </h2>
           <p className="text-sm text-slate-500 mt-1">
-            Discover why thousands of style-forward customers across Bangladesh trust Astera for daily confidence.
+            কেন সারা বাংলাদেশের ফ্যাশন-সচেতন হাজারো মানুষ প্রতিদিনের আস্থার জন্য Astera-কে বেছে নেন।
           </p>
         </div>
 

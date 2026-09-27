@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
             <div className="mt-4 text-xs text-slate-400 flex items-center gap-2">
               <Clock className="w-3.5 h-3.5 text-teal-400" />
-              <span>Customer Care: 9:00 AM – 10:00 PM (Everyday)</span>
+              <span>কাস্টমার সাপোর্ট: সকাল ৯:০০ – রাত ১০:০০ (প্রতিদিন)</span>
             </div>
 
             {/* Social Icons */}
@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Col 3: Quick Links */}
           <div>
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4">
-              Quick Links
+              প্রয়োজনীয় লিংক
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('about')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  About Us
+                  আমাদের সম্পর্কে
                 </button>
               </li>
               <li>
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('blog')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Fashion Blog
+                  ফ্যাশন ব্লগ
                 </button>
               </li>
               <li>
@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('shop')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Shop Catalog
+                  শপ ক্যাটালগ
                 </button>
               </li>
               <li>
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('combos')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Combos &amp; Packs
+                  কম্বো ও বান্ডিল
                 </button>
               </li>
               <li>
@@ -118,7 +118,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('offers')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Offers &amp; Coupons
+                  অফার ও কুপন
                 </button>
               </li>
               <li>
@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('about')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Careers at Astera
+                  ক্যারিয়ার
                 </button>
               </li>
             </ul>
@@ -135,7 +135,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Col 4: Support */}
           <div>
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4">
-              Customer Support
+              কাস্টমার সাপোর্ট
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
@@ -143,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contact')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Contact Support
+                  যোগাযোগ ও সহায়তা
                 </button>
               </li>
               <li>
@@ -151,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contact')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Shipping &amp; Delivery Rates
+                  শিপিং ও ডেলিভারি তথ্য
                 </button>
               </li>
               <li>
@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contact')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Returns &amp; 7-Day Exchange
+                  রিটার্ন ও 7 days easy exchange
                 </button>
               </li>
               <li>
@@ -167,7 +167,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contact')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Size Guide &amp; Fit Advisor
+                  সাইজ চার্ট ও নির্দেশিকা
                 </button>
               </li>
               <li>
@@ -175,7 +175,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contact')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Terms of Service
+                  শর্তাবলী
                 </button>
               </li>
               <li>
@@ -183,7 +183,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contact')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Privacy Policy
+                  গোপনীয়তা নীতি
                 </button>
               </li>
             </ul>
@@ -192,7 +192,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Col 5: Contact & Office Location */}
           <div>
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4">
-              Get in Touch
+              যোগাযোগ
             </h4>
             <div className="space-y-3 text-xs">
               <div className="flex items-start gap-2.5">
@@ -205,9 +205,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white font-medium">Customer Hotline:</p>
+                  <p className="text-white font-medium">কাস্টমার হটলাইন:</p>
                   <p className="text-slate-400">01700-000000</p>
-                  <p className="text-white font-medium mt-1">Telesales:</p>
+                  <p className="text-white font-medium mt-1">টেলিসেলস ও বাল্ক:</p>
                   <p className="text-slate-400">09613-888999</p>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Payment Badges in Bangladesh */}
           <div className="flex items-center gap-2">
-            <span className="text-slate-400 text-[11px] font-medium mr-1">Accepted Payments:</span>
+            <span className="text-slate-400 text-[11px] font-medium mr-1">পেমেন্ট পার্টনারসমূহ:</span>
             <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-bold text-pink-400">
               bKash
             </span>

@@ -86,13 +86,12 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
         <div>
           <span className="text-xs font-extrabold uppercase tracking-wider text-teal-600 flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-teal-500" />
-            Curated Collections
+            নির্বাচিত কালেকশন
           </span>
           <h2
             className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Shop by Category
+            ক্যাটাগরি অনুযায়ী কেনাকাটা
           </h2>
         </div>
 
@@ -100,7 +99,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
           onClick={onViewAllCategories}
           className="text-xs sm:text-sm font-bold text-teal-700 hover:text-teal-800 flex items-center gap-1 transition-colors group cursor-pointer"
         >
-          <span>View All</span>
+          <span>সবগুলো দেখুন</span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </button>
       </div>
@@ -121,12 +120,12 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
 
             {/* Category Title */}
             <span className="mt-3 text-xs sm:text-sm font-bold text-slate-800 group-hover:text-teal-700 transition-colors line-clamp-1">
-              {category.name}
+              {category.nameBn || category.name}
             </span>
 
             {/* Item Count */}
             <span className="text-[11px] font-medium text-slate-400 mt-0.5">
-              {category.itemCount} items
+              {category.itemCount} টি পণ্য
             </span>
           </button>
         ))}

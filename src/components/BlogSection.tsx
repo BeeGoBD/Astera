@@ -20,16 +20,15 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
           <div>
             <span className="text-xs font-black uppercase tracking-wider text-teal-600 flex items-center gap-1.5">
               <BookOpen className="w-3.5 h-3.5" />
-              Editorial &amp; Lookbook Insights
+              এডিটরিয়াল ও লুকবুক ইনসাইটস
             </span>
             <h2
               className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Read Our Latest Style Guides
+              আমাদের সর্বশেষ ফ্যাশন ও স্টাইল গাইড
             </h2>
             <p className="text-sm text-slate-500 mt-1">
-              Practical tips on fabric care, contemporary silhouette styling, and seasonal wardrobe curation.
+              পোশাকের সঠিক যত্ন, আধুনিক স্টাইলিং ও সিজনাল আউটফিট তৈরির প্রয়োজনীয় টিপস।
             </p>
           </div>
 
@@ -38,7 +37,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             onClick={onViewAllBlogs}
             className="text-xs sm:text-sm font-bold text-teal-700 hover:text-teal-800 flex items-center gap-1 self-start sm:self-auto cursor-pointer group"
           >
-            <span>VIEW MORE BLOGS</span>
+            <span>সবগুলো ব্লগ দেখুন</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
@@ -86,7 +85,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-teal-600 group-hover:text-teal-700">
-                <span>Read Full Guide</span>
+                <span>পুরো গাইড পড়ুন</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </div>
             </article>

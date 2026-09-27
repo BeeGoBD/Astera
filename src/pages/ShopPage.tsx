@@ -73,16 +73,15 @@ export const ShopPage: React.FC<ShopPageProps> = ({
       <div className="bg-gradient-to-r from-teal-900 to-slate-900 rounded-3xl p-6 sm:p-10 text-white mb-8 relative overflow-hidden shadow-lg border border-teal-800/30">
         <div className="relative z-10 max-w-xl">
           <span className="px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1.5 border border-teal-400/30 mb-3">
-            <Sparkles className="w-3.5 h-3.5" /> All Collections Catalog
+            <Sparkles className="w-3.5 h-3.5" /> সকল কালেকশন ক্যাটালগ
           </span>
           <h1
             className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Astera Fashion Store
+            Astera ফ্যাশন স্টোর
           </h1>
           <p className="mt-2 text-xs sm:text-sm text-slate-300">
-            Browse contemporary street essentials, everyday cotton wear, ethnic elegance, and comfortable denim with delivery across Bangladesh.
+            আধুনিক স্ট্রিটওয়্যার, আরামদায়ক কটন ক্যাজুয়াল, এথনিক আভিজাত্য ও ট্রেন্ডি ডেনিম কালেকশন — সারা বাংলাদেশে দ্রুত ডেলিভারি সহ।
           </p>
         </div>
       </div>
@@ -93,20 +92,20 @@ export const ShopPage: React.FC<ShopPageProps> = ({
           <button
             type="button"
             onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-            className="lg:hidden px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold flex items-center gap-2 shadow-2xs"
+            className="lg:hidden px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold flex items-center gap-2 shadow-2xs cursor-pointer"
           >
             <Filter className="w-4 h-4 text-teal-600" />
-            <span>Filters</span>
+            <span>ফিল্টার</span>
           </button>
 
           <span className="text-xs font-semibold text-slate-500">
-            Showing <strong className="text-slate-900">{filteredProducts.length}</strong> products
+            মোট <strong className="text-slate-900">{filteredProducts.length}</strong> টি প্রোডাক্ট
           </span>
 
           {searchQuery && (
             <div className="flex items-center gap-1.5 px-2.5 py-1 bg-teal-50 text-teal-800 rounded-lg text-xs font-medium">
-              <span>Search: "{searchQuery}"</span>
-              <button onClick={onClearSearch} className="hover:text-rose-600">
+              <span>অনুসন্ধান: "{searchQuery}"</span>
+              <button onClick={onClearSearch} className="hover:text-rose-600 cursor-pointer">
                 <X className="w-3 h-3" />
               </button>
             </div>
@@ -116,17 +115,17 @@ export const ShopPage: React.FC<ShopPageProps> = ({
         {/* Sort Select */}
         <div className="flex items-center gap-2 self-end sm:self-auto">
           <ArrowUpDown className="w-4 h-4 text-slate-400" />
-          <span className="text-xs text-slate-500 font-medium">Sort by:</span>
+          <span className="text-xs text-slate-500 font-medium">সাজান:</span>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as any)}
-            className="px-3 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
+            className="px-3 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 cursor-pointer"
           >
-            <option value="featured">Featured First</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="discount">Biggest Discount</option>
-            <option value="rating">Top Customer Rated</option>
+            <option value="featured">জনপ্রিয় প্রথম</option>
+            <option value="price-low">দাম: কম থেকে বেশি</option>
+            <option value="price-high">দাম: বেশি থেকে কম</option>
+            <option value="discount">সর্বোচ্চ ছাড়</option>
+            <option value="rating">সর্বোচ্চ রেটিং</option>
           </select>
         </div>
       </div>
@@ -142,20 +141,20 @@ export const ShopPage: React.FC<ShopPageProps> = ({
           {/* Categories */}
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-2xs space-y-3">
             <h3 className="font-extrabold text-sm text-slate-900 flex items-center justify-between">
-              <span>Categories</span>
+              <span>ক্যাটাগরি</span>
               <SlidersHorizontal className="w-4 h-4 text-teal-600" />
             </h3>
             <div className="space-y-1 text-xs">
               <button
                 type="button"
                 onClick={() => onSelectCategory('all')}
-                className={`w-full text-left px-3 py-2 rounded-xl transition-colors font-medium flex items-center justify-between ${
+                className={`w-full text-left px-3 py-2 rounded-xl transition-colors font-medium flex items-center justify-between cursor-pointer ${
                   !selectedCategorySlug || selectedCategorySlug === 'all'
                     ? 'bg-teal-50 text-teal-800 font-bold'
                     : 'text-slate-600 hover:bg-slate-50'
                 }`}
               >
-                <span>All Categories</span>
+                <span>সকল ক্যাটাগরি</span>
                 <span className="text-slate-400">{products.length}</span>
               </button>
               {CATEGORIES.map((cat) => {
@@ -166,13 +165,13 @@ export const ShopPage: React.FC<ShopPageProps> = ({
                     key={cat.id}
                     type="button"
                     onClick={() => onSelectCategory(cat.slug)}
-                    className={`w-full text-left px-3 py-2 rounded-xl transition-colors font-medium flex items-center justify-between ${
+                    className={`w-full text-left px-3 py-2 rounded-xl transition-colors font-medium flex items-center justify-between cursor-pointer ${
                       isSelected
                         ? 'bg-teal-50 text-teal-800 font-bold'
                         : 'text-slate-600 hover:bg-slate-50'
                     }`}
                   >
-                    <span>{cat.name}</span>
+                    <span>{cat.nameBn || cat.name}</span>
                     <span className="text-slate-400">{catProductCount}</span>
                   </button>
                 );
@@ -182,7 +181,7 @@ export const ShopPage: React.FC<ShopPageProps> = ({
 
           {/* Price Range Slider */}
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-2xs space-y-3">
-            <h3 className="font-extrabold text-sm text-slate-900">Maximum Price (৳)</h3>
+            <h3 className="font-extrabold text-sm text-slate-900">সর্বোচ্চ বাজেট (৳)</h3>
             <div className="space-y-2">
               <input
                 type="range"
@@ -191,29 +190,29 @@ export const ShopPage: React.FC<ShopPageProps> = ({
                 step="100"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="w-full accent-teal-600"
+                className="w-full accent-teal-600 cursor-pointer"
               />
               <div className="flex justify-between text-xs text-slate-600 font-bold tabular-nums">
-                <span>৳900</span>
+                <span>৳৯০০</span>
                 <span className="text-teal-700 bg-teal-50 px-2 py-0.5 rounded">
-                  Up to ৳{maxPrice.toLocaleString()}
+                  ৳{maxPrice.toLocaleString()} পর্যন্ত
                 </span>
-                <span>৳4,000</span>
+                <span>৳৪,০০০</span>
               </div>
             </div>
           </div>
 
           {/* Availability */}
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-2xs space-y-3">
-            <h3 className="font-extrabold text-sm text-slate-900">Availability</h3>
+            <h3 className="font-extrabold text-sm text-slate-900">স্টক স্ট্যাটাস</h3>
             <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
               <input
                 type="checkbox"
                 checked={onlyInStock}
                 onChange={(e) => setOnlyInStock(e.target.checked)}
-                className="rounded text-teal-600 focus:ring-teal-500 w-4 h-4"
+                className="rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
               />
-              <span>In Stock for Immediate Delivery (64 Districts)</span>
+              <span>স্টকে থাকা পণ্যসমূহ (৬৪ জেলায় ডেলিভারি)</span>
             </label>
           </div>
         </aside>
@@ -225,9 +224,9 @@ export const ShopPage: React.FC<ShopPageProps> = ({
               <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mx-auto mb-3">
                 <Filter className="w-8 h-8" />
               </div>
-              <h4 className="font-bold text-slate-800 text-base">No products match your criteria</h4>
+              <h4 className="font-bold text-slate-800 text-base">কোনো প্রোডাক্ট খুঁজে পাওয়া যায়নি</h4>
               <p className="text-xs text-slate-500 mt-1">
-                Try widening your price range or clearing category filters.
+                অনুগ্রহ করে দামের পরিসীমা বাড়িয়ে দেখুন অথবা ফিল্টার রিসেট করুন।
               </p>
               <button
                 type="button"
@@ -237,9 +236,9 @@ export const ShopPage: React.FC<ShopPageProps> = ({
                   setOnlyInStock(false);
                   onClearSearch();
                 }}
-                className="mt-4 px-5 py-2.5 bg-teal-600 text-white font-bold text-xs rounded-xl shadow-xs"
+                className="mt-4 px-5 py-2.5 bg-teal-600 text-white font-bold text-xs rounded-xl shadow-xs cursor-pointer"
               >
-                Reset All Filters
+                ফিল্টার রিসেট করুন
               </button>
             </div>
           ) : (

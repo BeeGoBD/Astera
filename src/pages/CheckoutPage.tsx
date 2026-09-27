@@ -67,31 +67,31 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
           </div>
 
           <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold uppercase tracking-wider">
-            Order Placed Successfully
+            অর্ডার সফলভাবে সম্পন্ন হয়েছে
           </span>
 
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-3">
-            Thank you, {formData.name}!
+            ধন্যবাদ, {formData.name}!
           </h2>
           <p className="text-sm text-slate-500 mt-2 max-w-md mx-auto">
-            Your Astera order <strong className="text-slate-900 font-mono">#{orderId}</strong> has been confirmed. Our Dhaka dispatch team will contact you shortly at <strong className="text-teal-700">{formData.phone}</strong> before shipping.
+            আপনার Astera অর্ডার <strong className="text-slate-900 font-mono">#{orderId}</strong> সফলভাবে কনফার্ম করা হয়েছে। ডেলিভারির পূর্বে আমাদের টিম আপনার সাথে <strong className="text-teal-700">{formData.phone}</strong> নম্বরে যোগাযোগ করবে।
           </p>
 
           <div className="mt-8 p-5 bg-slate-50 rounded-2xl border border-slate-100 max-w-md mx-auto text-left text-xs space-y-2">
             <div className="flex justify-between">
-              <span className="text-slate-400">Order ID:</span>
+              <span className="text-slate-400">অর্ডার আইডি:</span>
               <span className="font-mono font-bold text-slate-800">#{orderId}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-400">Payment Mode:</span>
-              <span className="font-bold text-slate-800 uppercase">{formData.paymentMethod}</span>
+              <span className="text-slate-400">পেমেন্ট মাধ্যম:</span>
+              <span className="font-bold text-slate-800 uppercase">{formData.paymentMethod === 'cod' ? 'Cash on Delivery' : formData.paymentMethod}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-400">Delivery Address:</span>
+              <span className="text-slate-400">ডেলিভারি ঠিকানা:</span>
               <span className="font-medium text-slate-800 truncate max-w-[200px]">{formData.address}, {formData.city}</span>
             </div>
             <div className="flex justify-between border-t border-slate-200 pt-2 font-black text-sm text-slate-900">
-              <span>Total Payable:</span>
+              <span>সর্বমোট প্রদেয়:</span>
               <span className="text-teal-700 tabular-nums">৳{grandTotal.toLocaleString()}</span>
             </div>
           </div>
@@ -99,15 +99,15 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
             <button
               onClick={onNavigateHome}
-              className="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-md transition-colors"
+              className="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-md transition-colors cursor-pointer"
             >
-              Back to Home
+              হোম পেজে ফিরে যান
             </button>
             <button
               onClick={onNavigateShop}
-              className="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-md transition-colors"
+              className="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-md transition-colors cursor-pointer"
             >
-              Continue Shopping
+              আরও কেনাকাটা করুন
             </button>
           </div>
         </div>
@@ -121,13 +121,13 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
         <div className="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-4">
           <ShoppingBag className="w-8 h-8" />
         </div>
-        <h3 className="text-xl font-bold text-slate-900">Your bag is empty</h3>
-        <p className="text-xs text-slate-500 mt-1">Please select items before proceeding to checkout.</p>
+        <h3 className="text-xl font-bold text-slate-900">আপনার শপিং ব্যাগ খালি রয়েছে</h3>
+        <p className="text-xs text-slate-500 mt-1">অনুগ্রহ করে চেকআউটের পূর্বে পছন্দের পণ্য ব্যাগে যোগ করুন।</p>
         <button
           onClick={onNavigateShop}
-          className="mt-6 px-6 py-3 bg-teal-600 text-white font-bold text-xs rounded-xl shadow-xs"
+          className="mt-6 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-xs cursor-pointer"
         >
-          Browse Catalog
+          কালেকশন ব্রাউজ করুন
         </button>
       </div>
     );
@@ -140,15 +140,15 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
         <div>
           <button
             onClick={onNavigateShop}
-            className="text-xs font-semibold text-teal-700 hover:underline flex items-center gap-1 mb-1"
+            className="text-xs font-semibold text-teal-700 hover:underline flex items-center gap-1 mb-1 cursor-pointer"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Continue Shopping
+            <ArrowLeft className="w-3.5 h-3.5" /> কেনাকাটায় ফিরে যান
           </button>
           <h1
             className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Express Checkout
+            এক্সপ্রেস চেকআউট
           </h1>
         </div>
       </div>
@@ -161,20 +161,20 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-2xs space-y-4">
               <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
                 <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 text-xs font-bold flex items-center justify-center">
-                  1
+                  ১
                 </span>
-                <h3 className="text-sm font-extrabold text-slate-900">Customer Information</h3>
+                <h3 className="text-sm font-extrabold text-slate-900">গ্রাহকের যোগাযোগের তথ্য</h3>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                 <div>
                   <label className="block font-semibold text-slate-700 mb-1">
-                    Full Name <span className="text-rose-500">*</span>
+                    পুরো নাম <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Tanvir Hossain"
+                    placeholder="যেমন: তানভীর হোসেন"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
@@ -182,7 +182,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                 </div>
                 <div>
                   <label className="block font-semibold text-slate-700 mb-1">
-                    Phone Number (01XXXXXXXXX) <span className="text-rose-500">*</span>
+                    মোবাইল নম্বর (01XXXXXXXXX) <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -197,7 +197,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
 
               <div className="text-xs">
                 <label className="block font-semibold text-slate-700 mb-1">
-                  Email Address (Optional for order tracking)
+                  ইমেইল এড্রেস (অর্ডার ট্র্যাকিং ও রসিদের জন্য ঐচ্ছিক)
                 </label>
                 <input
                   type="email"
@@ -213,9 +213,9 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-2xs space-y-4">
               <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
                 <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 text-xs font-bold flex items-center justify-center">
-                  2
+                  ২
                 </span>
-                <h3 className="text-sm font-extrabold text-slate-900">Delivery Address</h3>
+                <h3 className="text-sm font-extrabold text-slate-900">ডেলিভারি ঠিকানা</h3>
               </div>
 
               {/* Delivery Zone Selector */}
@@ -228,7 +228,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className="font-bold">Inside Dhaka</span>
+                    <span className="font-bold">ঢাকার ভেতরে</span>
                     <input
                       type="radio"
                       name="deliveryZone"
@@ -237,7 +237,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                       className="accent-teal-600"
                     />
                   </div>
-                  <span className="text-[11px] text-slate-500">৳60 · Within 24 Hours</span>
+                  <span className="text-[11px] text-slate-500">৳৬০ · ২৪ ঘণ্টার মধ্যে</span>
                 </label>
 
                 <label
@@ -248,7 +248,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className="font-bold">Outside Dhaka</span>
+                    <span className="font-bold">ঢাকার বাইরে</span>
                     <input
                       type="radio"
                       name="deliveryZone"
@@ -257,34 +257,34 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                       className="accent-teal-600"
                     />
                   </div>
-                  <span className="text-[11px] text-slate-500">৳120 · 48-72 Hours</span>
+                  <span className="text-[11px] text-slate-500">৳১২০ · ৪৮ ঘণ্টার মধ্যে</span>
                 </label>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                 <div>
-                  <label className="block font-semibold text-slate-700 mb-1">Division</label>
+                  <label className="block font-semibold text-slate-700 mb-1">বিভাগ</label>
                   <select
                     value={formData.division}
                     onChange={(e) => setFormData({ ...formData, division: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 cursor-pointer"
                   >
-                    <option value="Dhaka">Dhaka Division</option>
-                    <option value="Chittagong">Chittagong Division</option>
-                    <option value="Rajshahi">Rajshahi Division</option>
-                    <option value="Sylhet">Sylhet Division</option>
-                    <option value="Khulna">Khulna Division</option>
-                    <option value="Barisal">Barisal Division</option>
-                    <option value="Rangpur">Rangpur Division</option>
-                    <option value="Mymensingh">Mymensingh Division</option>
+                    <option value="Dhaka">ঢাকা বিভাগ</option>
+                    <option value="Chittagong">চট্টগ্রাম বিভাগ</option>
+                    <option value="Rajshahi">রাজশাহী বিভাগ</option>
+                    <option value="Sylhet">সিলেট বিভাগ</option>
+                    <option value="Khulna">খুলনা বিভাগ</option>
+                    <option value="Barisal">বরিশাল বিভাগ</option>
+                    <option value="Rangpur">রংপুর বিভাগ</option>
+                    <option value="Mymensingh">ময়মনসিংহ বিভাগ</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block font-semibold text-slate-700 mb-1">District / City</label>
+                  <label className="block font-semibold text-slate-700 mb-1">জেলা / থানা / শহর</label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Uttara, Dhaka or GEC, Chittagong"
+                    placeholder="যেমন: উত্তরা, ঢাকা বা জিইসি, চট্টগ্রাম"
                     value={formData.city}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
@@ -294,12 +294,12 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
 
               <div className="text-xs">
                 <label className="block font-semibold text-slate-700 mb-1">
-                  Full Street Address &amp; Landmarks <span className="text-rose-500">*</span>
+                  বিস্তারিত ডেলিভারি ঠিকানা <span className="text-rose-500">*</span>
                 </label>
                 <textarea
                   rows={2}
                   required
-                  placeholder="House No., Road No., Area, Nearby Landmark..."
+                  placeholder="বাড়ি নং, রোড নং, এলাকা, পরিচিত স্থান..."
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
@@ -311,9 +311,9 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-2xs space-y-4">
               <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
                 <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 text-xs font-bold flex items-center justify-center">
-                  3
+                  ৩
                 </span>
-                <h3 className="text-sm font-extrabold text-slate-900">Payment Method</h3>
+                <h3 className="text-sm font-extrabold text-slate-900">পেমেন্ট পদ্ধতি</h3>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
@@ -333,8 +333,8 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                     className="accent-teal-600"
                   />
                   <div>
-                    <p className="font-bold text-slate-900">Cash on Delivery (COD)</p>
-                    <p className="text-[11px] text-slate-500">Pay when order arrives</p>
+                    <p className="font-bold text-slate-900">cash on delivery (ক্যাশ অন ডেলিভারি)</p>
+                    <p className="text-[11px] text-slate-500">পণ্য হাতে পেয়ে চেক করে টাকা দিন</p>
                   </div>
                 </label>
 
@@ -354,8 +354,8 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                     className="accent-pink-600"
                   />
                   <div>
-                    <p className="font-bold text-slate-900">bKash Online</p>
-                    <p className="text-[11px] text-slate-500">Instant merchant wallet</p>
+                    <p className="font-bold text-slate-900">বিকাশ অনলাইন পেমেন্ট</p>
+                    <p className="text-[11px] text-slate-500">তাত্ক্ষণিক মার্চেন্ট ওয়ালেট</p>
                   </div>
                 </label>
 
@@ -375,8 +375,8 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                     className="accent-orange-600"
                   />
                   <div>
-                    <p className="font-bold text-slate-900">Nagad Payment</p>
-                    <p className="text-[11px] text-slate-500">Post office digital pay</p>
+                    <p className="font-bold text-slate-900">নগদ পেমেন্ট</p>
+                    <p className="text-[11px] text-slate-500">ডাক বিভাগ ডিজিটাল ওয়ালেট</p>
                   </div>
                 </label>
 
@@ -396,8 +396,8 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                     className="accent-blue-600"
                   />
                   <div>
-                    <p className="font-bold text-slate-900">Visa / Mastercard</p>
-                    <p className="text-[11px] text-slate-500">Local &amp; international cards</p>
+                    <p className="font-bold text-slate-900">ভিসা / মাস্টারকার্ড</p>
+                    <p className="text-[11px] text-slate-500">দেশি ও আন্তর্জাতিক ব্যাংক কার্ড</p>
                   </div>
                 </label>
               </div>
@@ -408,7 +408,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
           <div className="lg:col-span-5">
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm sticky top-24 space-y-4">
               <h3 className="font-extrabold text-sm text-slate-900 border-b border-slate-100 pb-3">
-                Order Review ({items.length} items)
+                অর্ডার রিভিউ ({items.length} টি আইটেম)
               </h3>
 
               {/* Items List */}
@@ -426,7 +426,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                       <div>
                         <h4 className="font-bold text-slate-900">{item.product.name}</h4>
                         <p className="text-slate-400 text-[11px]">
-                          Size: {item.selectedSize} · Qty: {item.quantity}
+                          সাইজ: {item.selectedSize} · পরিমাণ: {item.quantity}
                         </p>
                       </div>
                     </div>
@@ -440,22 +440,22 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
               {/* Price Breakdown in ৳ */}
               <div className="pt-3 border-t border-slate-100 space-y-2 text-xs text-slate-600">
                 <div className="flex justify-between">
-                  <span>Subtotal</span>
+                  <span>সাবটোটাল</span>
                   <span className="font-bold text-slate-900 tabular-nums">৳{subtotal.toLocaleString()}</span>
                 </div>
 
                 {discountAmount > 0 && (
                   <div className="flex justify-between text-rose-600 font-semibold">
-                    <span>Discount ({appliedCoupon})</span>
+                    <span>ছাড় ({appliedCoupon})</span>
                     <span className="tabular-nums">-৳{discountAmount.toLocaleString()}</span>
                   </div>
                 )}
 
                 <div className="flex justify-between">
-                  <span>Delivery Charge</span>
+                  <span>ডেলিভারি চার্জ</span>
                   <span className="font-bold text-slate-900 tabular-nums">
                     {deliveryFee === 0 ? (
-                      <span className="text-emerald-700">FREE</span>
+                      <span className="text-emerald-700">ফ্রি ডেলিভারি</span>
                     ) : (
                       `৳${deliveryFee}`
                     )}
@@ -463,7 +463,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                 </div>
 
                 <div className="flex justify-between text-base font-black text-slate-900 pt-3 border-t border-slate-200">
-                  <span>Total Amount</span>
+                  <span>সর্বমোট প্রদেয়</span>
                   <span className="text-lg text-teal-700 tabular-nums">৳{grandTotal.toLocaleString()}</span>
                 </div>
               </div>
@@ -472,13 +472,13 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
                 type="submit"
                 className="w-full py-4 bg-teal-600 hover:bg-teal-700 text-white font-extrabold text-sm rounded-xl transition-all shadow-md shadow-teal-600/20 active:scale-95 flex items-center justify-center gap-2 cursor-pointer mt-2"
               >
-                <span>CONFIRM &amp; PLACE ORDER</span>
+                <span>অর্ডার নিশ্চিত করুন (Place Order)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-slate-400 pt-1">
                 <ShieldCheck className="w-4 h-4 text-teal-600" />
-                <span>7-Day Return Guarantee &amp; Doorstep Verification</span>
+                <span>7 days easy exchange ও ক্যাশ অন ডেলিভারি সুবিধা</span>
               </div>
             </div>
           </div>

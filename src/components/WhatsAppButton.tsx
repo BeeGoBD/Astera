@@ -32,10 +32,10 @@ export const WhatsAppButton: React.FC = () => {
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-300 border-2 border-emerald-600 rounded-full" />
               </div>
               <div>
-                <h4 className="font-bold text-sm">Astera WhatsApp Support</h4>
+                <h4 className="font-bold text-sm">Astera হোয়াটসঅ্যাপ সহায়তা</h4>
                 <p className="text-[11px] text-emerald-100 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-300" />
-                  Typically replies within 3 mins
+                  সাধারণত ৩ মিনিটের মধ্যে রিপ্লাই দেওয়া হয়
                 </p>
               </div>
             </div>
@@ -51,14 +51,14 @@ export const WhatsAppButton: React.FC = () => {
           {/* Chat Body */}
           <div className="p-4 bg-[#ECE5DD] min-h-[160px] flex flex-col justify-end space-y-2 text-xs">
             <div className="bg-white p-3 rounded-2xl rounded-tl-none shadow-2xs max-w-[85%] text-slate-800">
-              <p className="font-semibold text-teal-800 text-[11px] mb-0.5">Astera Concierge</p>
-              <p>Assalamu Alaikum! How can we assist you with Astera fashion collections or sizes today?</p>
-              <span className="text-[9px] text-slate-400 block text-right mt-1">Just now</span>
+              <p className="font-semibold text-teal-800 text-[11px] mb-0.5">Astera কাস্টমার কেয়ার</p>
+              <p>আসসালামু আলাইকুম! Astera ফ্যাশন কালেকশন বা সাইজ সংক্রান্ত কোনো তথ্যে কীভাবে সহায়তা করতে পারি?</p>
+              <span className="text-[9px] text-slate-400 block text-right mt-1">এইমাত্র</span>
             </div>
 
             {sentNotice && (
               <div className="bg-emerald-100 text-emerald-900 p-2.5 rounded-xl text-center font-semibold text-[11px] animate-in fade-in">
-                ✓ Message sent! Our team at 01700-000000 is replying on WhatsApp.
+                ✓ বার্তা পাঠানো হয়েছে! আমাদের টিম দ্রুত হোয়াটসঅ্যাপে উত্তর দিচ্ছে।
               </div>
             )}
           </div>
@@ -67,17 +67,17 @@ export const WhatsAppButton: React.FC = () => {
           <div className="p-2 bg-slate-50 border-t border-slate-100 flex gap-1.5 overflow-x-auto text-[11px]">
             <button
               type="button"
-              onClick={() => setMessage('Hi! What size fits chest 40 for Product 1?')}
-              className="px-2.5 py-1 bg-white border border-slate-200 rounded-full hover:bg-slate-100 whitespace-nowrap text-slate-700"
+              onClick={() => setMessage('Product 1 এর সাইজ চার্ট সম্পর্কে জানতে চাই')}
+              className="px-2.5 py-1 bg-white border border-slate-200 rounded-full hover:bg-slate-100 whitespace-nowrap text-slate-700 cursor-pointer"
             >
-              Size recommendation?
+              সাইজ সুপারিশ?
             </button>
             <button
               type="button"
-              onClick={() => setMessage('Can I pay Cash on Delivery outside Dhaka?')}
-              className="px-2.5 py-1 bg-white border border-slate-200 rounded-full hover:bg-slate-100 whitespace-nowrap text-slate-700"
+              onClick={() => setMessage('ঢাকার বাইরে cash on delivery সুবিধা আছে কি?')}
+              className="px-2.5 py-1 bg-white border border-slate-200 rounded-full hover:bg-slate-100 whitespace-nowrap text-slate-700 cursor-pointer"
             >
-              COD outside Dhaka?
+              cash on delivery সুবিধা?
             </button>
           </div>
 
@@ -85,7 +85,7 @@ export const WhatsAppButton: React.FC = () => {
           <form onSubmit={handleSend} className="p-3 bg-white border-t border-slate-100 flex items-center gap-2">
             <input
               type="text"
-              placeholder="Type your WhatsApp inquiry..."
+              placeholder="আপনার প্রশ্ন এখানে লিখুন..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className="flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-full text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-emerald-500"

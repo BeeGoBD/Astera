@@ -18,16 +18,15 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({ onViewMoreVideos }) 
           <div>
             <span className="text-xs font-black uppercase tracking-wider text-teal-400 flex items-center gap-1.5">
               <Film className="w-3.5 h-3.5" />
-              Runway &amp; Movement Studies
+              রানওয়ে ও ফ্যাশন মুভমেন্ট
             </span>
             <h2
               className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Astera Video Gallery
+              Astera ভিডিও গ্যালারি
             </h2>
             <p className="text-sm text-slate-400 mt-1">
-              Immerse yourself in our cinematic fashion lookbooks, design philosophy, and seasonal drops.
+              আমাদের সিনেমাটিক ফ্যাশন লুকবুক, ডিজাইনের মূল ভাবনা ও নতুন ড্রপের নান্দনিক উপস্থাপনা উপভোগ করুন।
             </p>
           </div>
 
@@ -36,7 +35,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({ onViewMoreVideos }) 
             onClick={onViewMoreVideos}
             className="text-xs sm:text-sm font-bold text-teal-400 hover:text-teal-300 flex items-center gap-1 self-start sm:self-auto cursor-pointer group"
           >
-            <span>VIEW MORE</span>
+            <span>সবগুলো দেখুন</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
         </div>

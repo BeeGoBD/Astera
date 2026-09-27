@@ -35,17 +35,16 @@ export const FeaturedProductsSection: React.FC<FeaturedProductsSectionProps> = (
         <div>
           <div className="flex items-center gap-1.5 text-xs font-black text-rose-600 uppercase tracking-widest">
             <Flame className="w-4 h-4 fill-rose-600 text-rose-600 animate-pulse" />
-            <span>Trending This Week in Bangladesh</span>
+            <span>বাংলাদেশে এই সপ্তাহের ট্রেন্ডিং কালেকশন</span>
           </div>
           {/* Large Vibrant Heading as required */}
           <h2
             className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mt-1"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             FEATURED PRODUCTS
           </h2>
           <p className="text-sm text-slate-500 mt-1">
-            Hand-picked contemporary fits designed for everyday confidence and enduring comfort.
+            প্রতিদিনের আত্মবিশ্বাস ও দীর্ঘস্থায়ী আরামের জন্য বিশেষভাবে নির্বাচিত আধুনিক পোশাক।
           </p>
         </div>
 
@@ -60,7 +59,7 @@ export const FeaturedProductsSection: React.FC<FeaturedProductsSectionProps> = (
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            All Featured
+            সবগুলো
           </button>
           <button
             type="button"
@@ -129,7 +128,7 @@ export const FeaturedProductsSection: React.FC<FeaturedProductsSectionProps> = (
           onClick={onViewMore}
           className="px-8 py-3.5 bg-slate-900 hover:bg-teal-700 text-white font-bold text-sm rounded-xl transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-2 cursor-pointer group"
         >
-          <span>VIEW MORE PRODUCTS</span>
+          <span>আরও প্রোডাক্ট দেখুন</span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-teal-400 group-hover:text-white" />
         </button>
       </div>
