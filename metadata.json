@@ -1,0 +1,6 @@
+{
+  "name": "Astera - Vibrant Fashion & Clothing",
+  "description": "Premium modern fashion and clothing store offering contemporary collections, vibrant fits, and everyday confidence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
